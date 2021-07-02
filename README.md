@@ -1,5 +1,10 @@
 ## MatrixFact
 
+### Install
+```
+pip install matrixfact
+```
+
 ### What is MatrixFact?
 MatrixFact contains modules for constrained/unconstrained matrix factorization (and related) methods for both sparse and dense matrices. The code is based on https://github.com/ChrisSchinnerl/MatrixFact3 and https://github.com/rikkhill/MatrixFact. We updated the code to support the latest library. It requires cvxopt, numpy, and scipy.
 
