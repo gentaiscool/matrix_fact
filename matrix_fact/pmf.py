@@ -1,5 +1,5 @@
 # Authors: Rikk Hill
-# License: GNU General Public License v3.0
+# License: BSD 3 Clause
 """
 MatrixFact Non-negative Matrix Factorization.
 

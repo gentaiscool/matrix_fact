@@ -1,7 +1,7 @@
 import os
 from setuptools import setup
 
-setup(name='MatrixFact',
+setup(name='matrix-fact',
       version='1.0',
       description='Python Matrix Factorization Module',
       author='Genta Indra Winata',

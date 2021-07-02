@@ -1,5 +1,5 @@
-# Authors: Genta Indra Winata
-# License: GNU General Public License v3.0
+# Authors: Christian Thurau
+# License: BSD 3 Clause
 """
 MatrixFact K-means clustering (unary-convex matrix factorization).
 """

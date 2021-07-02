@@ -1,12 +1,12 @@
 #!/usr/bin/python
 #
-# Copyright (C) Genta Indra Winata, 2010.
+# Copyright (C) Christian Thurau, 2010.
 # Licensed under the GNU General Public License (GPL).
 # http://www.gnu.org/licenses/gpl.txt
 
 '''matrixfact is a package for several Matrix Factorization variants.-
 Detailed documentation is available at http://matrixfact.googlecode.com
-Copyright (C) Genta Indra Winata, 2010. GNU General Public License (GPL)
+Copyright (C) Christian Thurau, 2010. GNU General Public License (GPL)
 '''
 
 from .nmf import *
