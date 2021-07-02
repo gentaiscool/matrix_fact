@@ -19,7 +19,7 @@ class PCA(MatrixFactBase):
     
     Principal Component Analysis. Factorize a data matrix into two matrices s.t.
     F = | data - W*H | is minimal. W is set to the eigenvectors of the
-    data covariance. PCA used matrixfact's SVD, thus, it might be more efficient 
+    data covariance. PCA used matrix_fact's SVD, thus, it might be more efficient 
     to use it directly.
     
     Parameters

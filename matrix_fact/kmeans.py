@@ -6,7 +6,7 @@ MatrixFact K-means clustering (unary-convex matrix factorization).
 import numpy as np
 import random
 
-import matrixfact.dist
+import matrix_fact.dist
 from .base import MatrixFactBase
 
 __all__ = ["Kmeans"]

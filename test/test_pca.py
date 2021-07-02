@@ -1,4 +1,4 @@
-from matrixfact.pca import PCA
+from matrix_fact.pca import PCA
 import numpy as np
 from numpy.testing import *
 

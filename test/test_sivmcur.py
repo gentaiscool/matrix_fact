@@ -1,4 +1,4 @@
-from matrixfact.sivm_cur import SIVM_CUR
+from matrix_fact.sivm_cur import SIVM_CUR
 import numpy as np
 from numpy.testing import *
 from base import *

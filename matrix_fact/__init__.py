@@ -4,8 +4,8 @@
 # Licensed under the GNU General Public License (GPL).
 # http://www.gnu.org/licenses/gpl.txt
 
-'''matrixfact is a package for several Matrix Factorization variants.-
-Detailed documentation is available at http://matrixfact.googlecode.com
+'''matrix_fact is a package for several Matrix Factorization variants.-
+Detailed documentation is available at http://matrix_fact.googlecode.com
 Copyright (C) Christian Thurau, 2010. GNU General Public License (GPL)
 '''
 

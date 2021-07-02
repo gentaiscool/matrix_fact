@@ -1,1 +1,1 @@
-from .matrixfact import *
+from .matrix_fact import *

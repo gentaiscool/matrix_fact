@@ -1,4 +1,4 @@
-from matrixfact.svd import SVD
+from matrix_fact.svd import SVD
 import numpy as np
 from numpy.testing import *
 

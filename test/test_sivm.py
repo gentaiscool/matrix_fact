@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.testing import *
-from matrixfact.sivm import SIVM
+from matrix_fact.sivm import SIVM
 from base import *
 
 class TestSIVM():

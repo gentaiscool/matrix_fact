@@ -1,4 +1,4 @@
-from matrixfact.cur import CUR
+from matrix_fact.cur import CUR
 import numpy as np
 from numpy.testing import *
 from base import *

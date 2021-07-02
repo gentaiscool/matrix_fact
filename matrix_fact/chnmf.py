@@ -63,7 +63,7 @@ class CHNMF(AA):
     (H >=0, sum(H, axis=1) = [1 .. 1]) and W resides on actual data points. 
     Factorization is solved via an alternating least squares optimization using 
     the quadratic programming solver from cvxopt. The results are usually 
-    equivalent to Archetypal Analysis (matrixfact.AA) but CHNMF also works for very 
+    equivalent to Archetypal Analysis (matrix_fact.AA) but CHNMF also works for very 
     large datasets.
     
     Parameters

@@ -1,4 +1,4 @@
-from matrixfact.nmf import *
+from matrix_fact.nmf import *
 import numpy as np
 from numpy.testing import *
 from base import *

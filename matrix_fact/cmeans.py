@@ -8,7 +8,7 @@ Plenum Press, New York 1981.
 """
 import numpy as np
 
-import matrixfact.dist
+import matrix_fact.dist
 from .base import MatrixFactBase
 
 __all__ = ["Cmeans"]

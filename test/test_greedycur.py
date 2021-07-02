@@ -1,4 +1,4 @@
-from matrixfact.greedycur import GREEDYCUR
+from matrix_fact.greedycur import GREEDYCUR
 import numpy as np
 from numpy.testing import *
 from base import *

@@ -105,7 +105,7 @@ class MatrixFactBase():
 
         def setup_logging():
             # create logger
-            self._logger = logging.getLogger("matrixfact")
+            self._logger = logging.getLogger("matrix_fact")
 
             # add ch to logger
             if len(self._logger.handlers) < 1:

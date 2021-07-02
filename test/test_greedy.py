@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.testing import *
-from matrixfact.greedy import GREEDY
+from matrix_fact.greedy import GREEDY
 from base import *
 
 class TestGREEDY():

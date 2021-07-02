@@ -1,4 +1,4 @@
-from matrixfact.kmeans import Kmeans
+from matrix_fact.kmeans import Kmeans
 import numpy as np
 from numpy.testing import *
 

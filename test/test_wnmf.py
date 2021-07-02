@@ -1,5 +1,5 @@
-from matrixfact.wnmf import *
-from matrixfact.nmf import NMF
+from matrix_fact.wnmf import *
+from matrix_fact.nmf import NMF
 import numpy as np
 from numpy.testing import *
 from base import *

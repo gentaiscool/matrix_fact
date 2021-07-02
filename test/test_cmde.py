@@ -1,4 +1,4 @@
-from matrixfact.cmde import CMD
+from matrix_fact.cmde import CMD
 import numpy as np
 from numpy.testing import *
 from base import *

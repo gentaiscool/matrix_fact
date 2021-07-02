@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.testing import *
-from matrixfact.chnmf import CHNMF
+from matrix_fact.chnmf import CHNMF
 from base import *
 
 class TestCHNMF():

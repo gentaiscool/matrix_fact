@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.testing import *
-from matrixfact.laesa import LAESA
+from matrix_fact.laesa import LAESA
 from base import *
 
 class TestLAESA():

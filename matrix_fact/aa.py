@@ -1,7 +1,7 @@
 # Authors: Christian Thurau
 # License: BSD 3 Clause
 """
-MatrixFact Archetypal Analysis [1]
+PyMF Archetypal Analysis [1]
 
     AA: class for Archetypal Analysis
 
@@ -12,10 +12,10 @@ import numpy as np
 from cvxopt import solvers, base
 
 from .svd import pinv
-from .base import MatrixFactBase
+from .base import PyMFBase
 __all__ = ["AA"]
 
-class AA(MatrixFactBase):
+class AA(PyMFBase):
     """
     AA(data, num_bases=4)
 
