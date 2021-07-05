@@ -6,7 +6,7 @@ pip install matrix-fact
 ```
 
 ### What is matrix-fact?
-matrix-fact contains modules for constrained/unconstrained matrix factorization (and related) methods for both sparse and dense matrices. The repository can be found at https://github.com/gentaiscool/matrix_fact. The code is based on https://github.com/ChrisSchinnerl/pymf3 and https://github.com/rikkhill/pymf. We updated the code to support the latest library. It requires cvxopt, numpy, scipy and torch. We just addded the support for PyTorch-based SNMF.
+matrix-fact contains modules for constrained/unconstrained matrix factorization (and related) methods for both sparse and dense matrices. The repository can be found at https://github.com/gentaiscool/matrix_fact. The code is based on https://github.com/ChrisSchinnerl/pymf3 and https://github.com/rikkhill/pymf. We updated the code to support the latest library. It requires cvxopt, numpy, scipy and torch. We just added the support for PyTorch-based SNMF.
 
 ### Packages
 
