@@ -37,3 +37,5 @@ from .awnmf import *
 from .abnmf import *
 from .base import *
 
+from .torch_snmf import *
+

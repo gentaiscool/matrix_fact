@@ -10,6 +10,7 @@ import logging.config
 import scipy.sparse
 from numpy.linalg import eigh
 from scipy.special import factorial
+import torch
 
 __all__ = ["MatrixFactBase", "MatrixFactBase3", "eighk", "cmdet", "simplex"]
 _EPS = np.finfo(float).eps
@@ -332,6 +333,117 @@ class MatrixFactBase3():
 
     def factorize(self):
         pass
+    
+class TorchMatrixFactBase():
+    # some small value
+    _EPS = 1e-10
+
+    def __init__(self, data, num_bases=4, **kwargs):
+        def setup_logging():
+            # create logger
+            self._logger = logging.getLogger("matrix_fact")
+
+            # add ch to logger
+            if len(self._logger.handlers) < 1:
+                # create console handler and set level to debug
+                ch = logging.StreamHandler()
+                ch.setLevel(logging.DEBUG)
+                # create formatter
+                formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
+
+                # add formatter to ch
+                ch.setFormatter(formatter)
+
+                self._logger.addHandler(ch)
+
+        setup_logging()
+
+        # set variables
+        self.data = data
+        self._num_bases = num_bases
+
+        # initialize H and W to random values
+        self._data_dimension, self._num_samples = self.data.shape
+
+
+    def residual(self):
+        res = (self.data - torch.mm(self.W, self.H)).abs().sum()
+        total = 100.0 * res / self.data.abs().sum()
+        return total
+
+    def frobenius_norm(self):
+        # check if W and H exist
+        if hasattr(self,'H') and hasattr(self,'W'):
+            err = ((self.data - torch.mm(self.W, self.H))**2).sum().sqrt()
+        else:
+            err = None
+
+        return err
+
+    def _init_w(self):
+        # add a small value, otherwise nmf and related methods get into trouble as
+        # they have difficulties recovering from zero.
+        self.W = torch.rand((self._data_dimension, self._num_bases)) + 10**-4
+
+    def _init_h(self):
+        self.H = torch.rand((self._num_bases, self._num_samples)) + 10**-4
+
+    def _update_h(self):
+        pass
+
+    def _update_w(self):
+        pass
+
+    def _converged(self, i):
+        derr = (self.ferr[i] - self.ferr[i-1]).abs() / self._num_samples
+        if derr < self._EPS:
+            return True
+        else:
+            return False
+
+    def factorize(self, niter=100, show_progress=False,
+                  compute_w=True, compute_h=True, compute_err=True,
+                  epoch_hook=None):
+        if show_progress:
+            self._logger.setLevel(logging.INFO)
+        else:
+            self._logger.setLevel(logging.ERROR)
+
+        # create W and H if they don't already exist
+        # -> any custom initialization to W,H should be done before
+        if not hasattr(self,'W') and compute_w:
+            self._init_w()
+
+        if not hasattr(self,'H') and compute_h:
+            self._init_h()
+
+        # Computation of the error can take quite long for large matrices,
+        # thus we make it optional.
+        if compute_err:
+            self.ferr = torch.zeros(niter)
+
+        for i in range(niter):
+            if compute_w:
+                self._update_w()
+
+            if compute_h:
+                self._update_h()
+
+            if compute_err:
+                self.ferr[i] = self.frobenius_norm()
+                self._logger.info('FN: %s (%s/%s)'  %(self.ferr[i], i+1, niter))
+            else:
+                self._logger.info('Iteration: (%s/%s)'  %(i+1, niter))
+
+            if epoch_hook is not None:
+                epoch_hook(self)
+
+            # check if the err is not changing anymore
+            if i > 1 and compute_err:
+                if self._converged(i):
+                    # adjust the error measure
+                    self.ferr = self.ferr[:i]
+                    break
 
 def _test():
     import doctest
