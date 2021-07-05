@@ -383,10 +383,10 @@ class TorchMatrixFactBase():
     def _init_w(self):
         # add a small value, otherwise nmf and related methods get into trouble as
         # they have difficulties recovering from zero.
-        self.W = torch.rand((self._data_dimension, self._num_bases)) + 10**-4
+        self.W = torch.rand((self._data_dimension, self._num_bases), device=self.data.device) + 10**-4
 
     def _init_h(self):
-        self.H = torch.rand((self._num_bases, self._num_samples)) + 10**-4
+        self.H = torch.rand((self._num_bases, self._num_samples), device=self.data.device) + 10**-4
 
     def _update_h(self):
         pass
