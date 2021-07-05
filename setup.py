@@ -9,7 +9,7 @@ with open(path.join(dir_path, 'README.md'), encoding='utf-8') as f:
 print(long_description)
 
 setup(name='matrix-fact',
-      version='1.1.1',
+      version='1.1.2',
       description='Python Matrix Factorization Module',
       long_description=long_description,
       long_description_content_type='text/markdown',

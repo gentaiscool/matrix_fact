@@ -27,7 +27,7 @@ The package includes:
 * PyTorch SNMF
 
 ### Usage
-Given a dataset, most factorization methods try to minimize the Frobenius norm <code>| data - W*H|</code> by finding a suitable set of basis vectors <code>W</code> and coefficients H. The syntax for calling the various methods is quite similar. Usually, one has to submit a desired number of basis vectors and the maximum number of iterations. For example, applying NMF to a dataset data aiming at 2 basis vectors within 10 iterations works as follows:
+Given a dataset, most factorization methods try to minimize the Frobenius norm <code>|data - W*H|</code> by finding a suitable set of basis vectors <code>W</code> and coefficients H. The syntax for calling the various methods is quite similar. Usually, one has to submit a desired number of basis vectors and the maximum number of iterations. For example, applying NMF to a dataset data aiming at 2 basis vectors within 10 iterations works as follows:
 
 ```python
 >>> import matrix_fact
