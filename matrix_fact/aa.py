@@ -12,10 +12,10 @@ import numpy as np
 from cvxopt import solvers, base
 
 from .svd import pinv
-from .base import PyMFBase
+from .base import MatrixFactBase
 __all__ = ["AA"]
 
-class AA(PyMFBase):
+class AA(MatrixFactBase):
     """
     AA(data, num_bases=4)
 
