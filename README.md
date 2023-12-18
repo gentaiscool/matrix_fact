@@ -34,7 +34,6 @@ Given a dataset, most factorization methods try to minimize the Frobenius norm <
 >>> import numpy as np
 >>> data = np.array([[1.0, 0.0, 2.0], [0.0, 1.0, 1.0]])
 >>> nmf_mdl = matrix_fact.NMF(data, num_bases=2, niter=10)
->>> nmf_mdl.initialization()
 >>> nmf_mdl.factorize()
 ```
 
@@ -44,7 +43,6 @@ The basis vectors are now stored in <code>nmf_mdl.W</code>, the coefficients in 
 >>> data = np.array([[1.5], [1.2]])
 >>> W = np.array([[1.0, 0.0], [0.0, 1.0]])
 >>> nmf_mdl = matrix_fact.NMF(data, num_bases=2, niter=1, compW=False)
->>> nmf_mdl.initialization()
 >>> nmf_mdl.W = W
 >>> nmf_mdl.factorize()
 ```
